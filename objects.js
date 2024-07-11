@@ -109,20 +109,29 @@ console.group("list of courses taken by females");
 console.log(femaleStudying);
 console.groupEnd();
 
-const BubbleSort = (input = {}, on) => {
+const BubbleSort = (input = {}, on, ascending = true) => {
   const data = [...input];
   let timePassed = 0;
   let temp = {};
   const start = new Date();
   data.forEach(() => {
-    data.forEach((stu1, i) => {
+    data.forEach((d, i) => {
       if (i + 1 < data.length) {
+        if( ascending ){
         if (data[i][on] > data[i + 1][on]) {
           temp = data[i];
           data[i] = data[i + 1];
           data[i + 1] = temp;
           temp = {};
         }
+      } else{
+        if (data[i][on] < data[i + 1][on]) {
+          temp = data[i];
+          data[i] = data[i + 1];
+          data[i + 1] = temp;
+          temp = {};
+        }
+      }
       }
     });
   });
@@ -135,5 +144,5 @@ const BubbleSort = (input = {}, on) => {
   };
 };
 console.group("Sorted List");
-console.log(BubbleSort(students, "age"));
+console.log(BubbleSort(students, "age",false));
 console.groupEnd();
