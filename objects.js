@@ -90,7 +90,7 @@ console.log(ElizabethInStudents);
 console.groupEnd();
 
 // آیا توی لیست دانش‌آموزان، دانش‌آموزی رو داریم که سنش بیشتر از ۶۰ باشه و مرد باشه؟
-doWeHaveMaleAbove60 = false;
+let doWeHaveMaleAbove60 = false;
 students.map((student) => {
   if (student.gender == "male" && student.age > 60) {
     doWeHaveMaleAbove60 = true;
@@ -109,31 +109,31 @@ console.group("list of courses taken by females");
 console.log(femaleStudying);
 console.groupEnd();
 
-
-const sortedList = () => {
-const cStudents = [...students];
-let timePassed = 0
-let temp = {};
-const timeConsumption = setInterval(()=>{
-  timer++
-},1000)
-cStudents.forEach(()=>{
-  cStudents.forEach((stu1, i) => {
-    if (i + 1 < cStudents.length) {
-      if (cStudents[i].age > cStudents[i + 1].age) {
-        temp = cStudents[i];
-        cStudents[i] = cStudents[i+1];
-        cStudents[i + 1] = temp;
-        temp = {};
-      
+const BubbleSort = (input = {}, on) => {
+  const data = [...input];
+  let timePassed = 0;
+  let temp = {};
+  const start = new Date();
+  data.forEach(() => {
+    data.forEach((stu1, i) => {
+      if (i + 1 < data.length) {
+        if (data[i][on] > data[i + 1][on]) {
+          temp = data[i];
+          data[i] = data[i + 1];
+          data[i + 1] = temp;
+          temp = {};
+        }
       }
-    }
+    });
   });
-})
-  clearInterval(timeConsumption)
-  console.log(timePassed)
-  return cStudents
+
+  const end = new Date();
+  timePassed = end - start;
+  return {
+    data: data,
+    time: `bubble sort takes ${timePassed / 1000} seconds to sort`,
+  };
 };
 console.group("Sorted List");
-console.log(sortedList());
+console.log(BubbleSort(students, "age"));
 console.groupEnd();
