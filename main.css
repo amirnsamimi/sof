@@ -105,7 +105,7 @@ button {
   border-top: 1px solid var(--fadeWhite);
 }
 
-.result {
+.sum {
   box-shadow: 0px 0px 17px 0px #ca3e474d, 0px 4px 4px 0px #00000033;
   background: var(--Lightaccent);
   border-radius: 100px;

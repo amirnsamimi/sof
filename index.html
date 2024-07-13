@@ -1,13 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group Generator</title>
-</head>
-<body>
-    <button onClick="grouping()">Generate Groups</button>
-    <div id="result"></div>
-</body>
-<script src="array.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <title>Calculator</title>
+    <script src="calculator.js" defer></script>
+  </head>
+  <body>
+    <main>
+        <div class="output">
+      <div id="operations"></div>
+      <div id="result">0</div>
+    </div>
+      <div class="numPad">
+        <div class="buttons">
+          <button id="clear" onclick="numbers('clear')">
+            <svg style="fill: var(--white)" >
+              <use xlink:href="./sprite.svg#clear" />
+            </svg> 
+          </button>
+          <button onclick="numbers('change-sign')">
+            <svg style="fill: var(--white)" >
+              <use xlink:href="./sprite.svg#sign-changer" />
+            </svg>
+          </button>
+          <button onclick="operations('percentage')">
+            <svg style="fill: var(--white)" >
+              <use xlink:href="./sprite.svg#percentage" />
+            </svg>
+          </button>
+          <button onclick="numbers('7')">7</button>
+          <button onclick="numbers('8')">8</button>
+          <button onclick="numbers('9')">9</button>
+          <button onclick="numbers('4')">4</button>
+          <button onclick="numbers('5')">5</button>
+          <button onclick="numbers('6')">6</button>
+          <button onclick="numbers('1')">1</button>
+          <button onclick="numbers('2')">2</button>
+          <button onclick="numbers('3')">3</button>
+          <button onclick="numbers('decimal')">
+          .
+          </button>
+          <button onclick="numbers('0')">0</button>
+          <button onclick="numbers('00')">00</button>
+        </div>
+        <div class="buttonsIsland">
+            <button onclick="operations('division')">
+          <svg style="fill: var(--white)">
+            <use xlink:href="./sprite.svg#division" />
+          </svg>
+        </button>
+        <button onclick="operations('cross')">
+          <svg style="fill: var(--white)" >
+            <use xlink:href="./sprite.svg#cross" />
+          </svg>
+          </button>
+          <button onclick="operations('minus')">
+          <svg style="fill: var(--white)" >
+            <use xlink:href="./sprite.svg#minus" />
+          </svg>
+          </button>
+          <button onclick="operations('plus')">
+          <svg style="fill: var(--white)" >
+            <use xlink:href="./sprite.svg#plus" />
+          </svg>
+          </button>
+          <button class="sum" onclick="calculate()">
+        =
+          </button>
+        </div>
+        <div class="border-t"></div>
+      </div>
+    </main>
+  </body>
 </html>
