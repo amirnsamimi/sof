@@ -1,0 +1,135 @@
+:root {
+  --white: #fff;
+  --accent: #ca3e47;
+  --Lightaccent: #ca3e47aa;
+  --primary: #313131;
+  --fadeWhite: #ffffff22;
+}
+
+*{
+    font-family: "Roboto Mono";
+}
+
+body {
+  background: radial-gradient(
+    160.3% 78.68% at 16.98% 14.39%,
+    #444444 45.19%,
+    #313131 95.67%
+  );
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+main {
+  background: var(--fadeWhite);
+  min-height: 480px;
+  width: 360px;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.numPad {
+  display: flex;
+  position: relative;
+}
+
+svg {
+  width: 16px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.buttons {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12, 1fr);
+  border-top: 1px solid var(--fadeWhite);
+  margin-inline: 10px;
+  padding-inline: 10px;
+  margin-top: 2rem;
+}
+
+button {
+  color: var(--white);
+  background-color: transparent;
+  font-size: 24px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+}
+
+.buttons button {
+  grid-column: auto / 4 span;
+  width: 70px;
+  height: 70px;
+}
+
+.buttonsIsland {
+  display: grid;
+  width: 60px;
+  align-items: center;
+  grid-template-columns: repeat(1, 1fr);
+  background-color: var(--primary);
+  padding-top: 2rem;
+  border-radius: 100px;
+  position: relative;
+}
+
+.buttonsIsland button {
+  grid-column: auto / 4 span;
+  width: 60px;
+  height: 70px;
+}
+
+.border-t {
+  height: 100%;
+  
+  margin-top: 2rem;
+  margin-left: 10px;
+    width: 10px;
+  
+  border-top: 1px solid var(--fadeWhite);
+}
+
+.result {
+  box-shadow: 0px 0px 17px 0px #ca3e474d, 0px 4px 4px 0px #00000033;
+  background: var(--Lightaccent);
+  border-radius: 100px;
+}
+
+
+#operations{
+    height: 135px;
+    overflow: hidden;
+    display: grid;
+    align-items: flex-end;
+    width: 100%;
+    color: var(--white);
+    opacity: 0.3;
+    font-size: 26px;
+}
+
+#result{
+    height: 42px;
+    width: 100%;
+    font-size: 55px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--white);
+    overflow-y: scroll;
+    padding-bottom: 24px;
+    margin-right: 15px;
+
+}
+::-webkit-scrollbar{
+    display: none;
+}
