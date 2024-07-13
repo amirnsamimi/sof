@@ -1,4 +1,8 @@
 let numberString = "0";
+let calculationArray = [];
+let total = 0;
+
+
 const numbers = (input) => {
   if (numberString == "0") {
     numberString = "";
@@ -57,6 +61,7 @@ const numbers = (input) => {
         .getElementById("clear")
         .setAttribute("onclick", 'operations("ac")');
       break;
+     
     default:
       break;
   }
@@ -64,8 +69,7 @@ const numbers = (input) => {
   document.getElementById("result").innerText = numberString;
 };
 
-let calculationArray = [];
-let total = 0;
+
 const operations = (operator) => {
   switch (operator) {
     case "plus":
@@ -91,18 +95,35 @@ const operations = (operator) => {
     case "ac":
       calculationArray = [];
       break;
-    case "percentage":
-      // calculationArray.push(+numberString/100);
-      // calculationArray.push("%");
-      // numberString = ""
-      console.log("work here");
-      break;
-
-    case "calc":
-      calculationArray.push(+numberString);
-      calculate();
-
-      break;
+      case "percentage":
+        if( calculationArray.length == 0 ){
+              numberString/=100
+              calculate()
+          }
+          if( calculationArray.length > 0){
+                const lastIndexItem = calculationArray[calculationArray.length-1]
+                if(lastIndexItem === "+" ){
+                    calculate();
+                    numberString = total + total*numberString/100
+                    calculationArray = [total]
+                }
+                if( lastIndexItem === "-"){
+                    calculate();
+                    numberString = total + total*numberString/100
+                    calculationArray = [total]
+                } if(lastIndexItem === "x" ){
+                    console.log(numberString)
+                    numberString=numberString/100
+                    calculate()
+                }
+                if( lastIndexItem === "÷"){
+                    numberString=numberString/100
+                    calculate()
+                }
+          }
+          
+          
+          break;
     default:
       break;
   }
@@ -113,6 +134,9 @@ const operations = (operator) => {
 };
 
 const calculate = () => {
+    calculationArray.push(+numberString);
+    
+    document.getElementById("operations").innerText = " ";
   if (typeof calculationArray[0] === "number") {
     total = calculationArray[0];
   }
@@ -130,5 +154,7 @@ const calculate = () => {
       total *= calculationArray[index + 1];
     }
   });
+  numberString = total 
+  calculationArray = []
   document.getElementById("result").innerText = total;
 };

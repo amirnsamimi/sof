@@ -8,9 +8,13 @@
 
 *{
     font-family: "Roboto Mono";
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
+
   background: radial-gradient(
     160.3% 78.68% at 16.98% 14.39%,
     #444444 45.19%,
@@ -21,6 +25,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+margin: 0 auto;
 }
 
 
@@ -104,6 +109,8 @@ button {
   box-shadow: 0px 0px 17px 0px #ca3e474d, 0px 4px 4px 0px #00000033;
   background: var(--Lightaccent);
   border-radius: 100px;
+  padding: 40px 0;
+  
 }
 
 
@@ -119,7 +126,7 @@ button {
 }
 
 #result{
-    height: 42px;
+    height: 60px;
     width: 100%;
     font-size: 55px;
     font-weight: 400;
