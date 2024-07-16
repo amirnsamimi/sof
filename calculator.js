@@ -158,4 +158,5 @@ const calculate = () => {
   numberString = total 
   calculationArray = []
   document.getElementById("result").innerText = total.toLocaleString('en-US').replaceAll(","," ");
+  
 };
