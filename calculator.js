@@ -132,6 +132,8 @@ const operations = (operator) => {
   document.getElementById("operations").innerText = calculationArray.map(e=>e).join(" ")
 };
 
+
+
 const calculate = () => {
     calculationArray.push(+numberString);
     
@@ -155,7 +157,5 @@ const calculate = () => {
   });
   numberString = total 
   calculationArray = []
-  const regexPattern = //
-
-  document.getElementById("result").innerText = total;
+  document.getElementById("result").innerText = total.toLocaleString('en-US').replaceAll(","," ");
 };
