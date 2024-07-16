@@ -9,15 +9,19 @@ const numbers = (input) => {
   }
   document.getElementById(
     "clear"
-  ).innerHTML = `  <svg style="fill: var(--white)" >
+  ).innerHTML = `<svg style="fill: var(--white)" >
               <use xlink:href="./sprite.svg#clear" />
             </svg>`;
   document.getElementById("clear").setAttribute("onclick", 'numbers("clear")');
   
   switch (input) {
     case "decimal":
-      numberString += ".";
-      break;
+      if(numberString.includes(".") === false){
+        numberString += "."
+        break;
+      }
+      numberString += "0"
+    break;
     case "0":
       numberString += "0";
       break;
@@ -120,17 +124,12 @@ const operations = (operator) => {
                     numberString=numberString/100
                     calculate()
                 }
-          }
-          
-          
-          break;
+          }       
+    break;
     default:
       break;
   }
-
-
-  document.getElementById("operations").innerText =   calculationArray.map(e=>e).join(" ")
-
+  document.getElementById("operations").innerText = calculationArray.map(e=>e).join(" ")
 };
 
 const calculate = () => {
@@ -156,5 +155,7 @@ const calculate = () => {
   });
   numberString = total 
   calculationArray = []
+  const regexPattern = //
+
   document.getElementById("result").innerText = total;
 };
