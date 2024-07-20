@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #startover{
+            display: none;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="score"><span id="user">0</span>-<span id="comp">0</span></div>
+    <div id="result">waiting for opponent...</div>
+    <div id="controllers">
+    <button onclick="player('rock')" id="rock">Rock</button>
+    <button onclick="player('paper')" id="paper">Paper</button>
+    <button onclick="player('scissor')" id="scissor">scissor</button>
+    </div>  
+    <button onclick="startOver()" id="startover">start over!</button>
+  </body>
+  <script src="./meeting.js"></script>
+</html>
