@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <script src="./dice.js" defer> </script>
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            display: grid;
+            justify-content: center;
+        }
+
+        .begin{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            gap:10px
+        }
+
+        .begin > input {
+            width: 30vw;
+            padding: 12px 24px;
+            border-radius: 10px;
+           outline: none;
+            border: 1px solid green;
+        }
+        ::-webkit-inner-spin-button{
+            display: none;
+        }
+        .begin  button{ 
+            min-width: 150px;
+       
+            color: white;
+            font-weight: 100;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 10px;
+        }
+        #resetGame{
+            background-color: rgba(107, 2, 2, 0.747);
+        }
+
+        #startGame{
+            background-color: rgb(1, 82, 5);
+        }
+
+     
+
+        #throwDiceButton{
+            display: flex;
+            width: 100%;
+            padding: 1rem;
+            flex-wrap: wrap;
+            gap:1rem;
+        }
+
+        #throwDiceButton > button{
+           width: calc((100% / 12 ) * 3 - 1rem);
+            padding: 2rem 0;
+            border-radius: 12px;
+            border: none;
+            color:white
+        }
+        button:disabled{
+            background: gray !important;
+        }
+        
+        #result{
+            display: flex;
+            justify-content: flex-start;
+            background-color: black;
+            width: 300px;
+            
+            height: 50px;
+            align-items: center;
+            border-radius: 100px;
+        }
+
+        .resContainer{
+            display: flex;
+            justify-content: center;
+        }
+        .light{
+            background-color: palegoldenrod;
+            width: 45px;
+            height: 45px;
+            border-radius: 100px;
+            margin:2px 2px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="opponents">
+      
+    </div>
+    <div class="resContainer">
+    <div id="result">
+   
+    </div>
+</div>
+    <div id="throwDiceButton">
+    </div>
+
+<div class="begin">
+<input id="userNumbers" defaultValue="1" type="number" >
+<div>
+<button id="startGame" onclick="startGame()">
+   Start Game
+</button>
+<!-- <button id="resetGame" onclick="startHandler()">
+    Restart Game
+ </button> -->
+</div>
+</div>
+</body>
+</html>

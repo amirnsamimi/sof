@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            box-sizing: border-box;
+         }
+         body{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+    
+        }
+        .loading{
+            border: 1px solid black;
+            border-radius: 100px;
+            padding: 20px;
+            mix-blend-mode:difference;
+            color:transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            width: 100%;
+            max-width: 300px;
+            transition: 1s all;
+            
+           
+        }
+
+        .loadingBar
+        button{
+            background-color: green;
+            color: white;
+            padding: 4px 8px;
+            width: 100px;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        
+    </div>
+    <div class="loadingNumber">
+        0%
+    </div>
+    <button onclick="loadingHandler()"> start loading </button>
+
+</body>
+<script src="./loading.js"></script>
+</html>
