@@ -49,7 +49,7 @@ function drawSector(sector, i) {
     ctx.rotate(ang + arc / 2)
     ctx.textAlign = 'right'
     ctx.fillStyle = '#fff'
-    ctx.font = 'bold 30px sans-serif'
+    ctx.font = ' 10px sans-serif'
     ctx.fillText(sector.label, rad - 10, 10)
     //
     ctx.restore()
@@ -59,6 +59,7 @@ function drawSector(sector, i) {
     const sector = sectors[getIndex()]
     ctx.canvas.style.transform = `rotate(${ang - PI / 2}rad)`
     spinTextEl.textContent = !angVel ? 'SPIN' : sector.label
+   
     spinEl.style.background = sector.color
   }
   
@@ -80,7 +81,7 @@ function drawSector(sector, i) {
     sectors.forEach(drawSector)
     rotate() // Initial rotation
     engine() // Start engine
-    spinEl.addEventListener('click', () => {
+    spinTextEl.addEventListener('click', () => {
       if (!angVel) angVel = rand(0.25, 0.45)
     })
   }

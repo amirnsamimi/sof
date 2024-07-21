@@ -20,9 +20,14 @@ body {
 }
 
 #wheelOfFortune {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  font-size: 2rem;
   position: relative;
   overflow: hidden;
+
 }
 
 #wheel {
@@ -32,7 +37,7 @@ body {
 #spin {
   font: 1.5em/0 sans-serif;
   user-select: none;
-  cursor: pointer;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,11 +62,15 @@ body {
   border-top: none;
 }
 
+#spinText{
+    cursor: pointer;
+}
+
     </style>
 </head>
 <body>
     <div id="wheelOfFortune">
-        <canvas id="wheel" width="600" height="600"></canvas>
+        <canvas id="wheel" width="300" height="300"></canvas>
         <div id="spin"></div>
         <div id="spinText">SPIN</div>
       </div>
