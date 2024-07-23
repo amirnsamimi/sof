@@ -46,10 +46,14 @@ const inspector = () => {
   if (minute === 0 && second === 0 && timerStatus === "short") {
     render("long");
     timerStatus = "long";
+    document.querySelector("#startBtn").children[0].style.color =
+    "cadetblue";
   }
   if (minute === 0 && second === 0 && timerStatus === "long") {
     render("pomodoro");
     timerStatus = "pomodoro";
+    document.querySelector("#startBtn").children[0].style.color =
+    "cadetblue";
   }
 };
 
@@ -74,7 +78,9 @@ const render = (el) => {
       minute = 4;
       second = 59;
       document.body.style.background = "cadetblue";
-
+      document.querySelector("#startBtn").children[0].style.color =
+      "cadetblue";
+    
       document.getElementById(
         "progressBar"
       ).style.background = `linear-gradient(90deg, white 0,white 0px, rgb(34, 77, 78)  0)`;
