@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pomodoro.css" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="./pomodoro.js"></script>
+  </head>
+  <body onload="docInit()">
+  
+      <header>
+        <span>Pomodoro</span>
+        <nav>
+          <button><img src="./icons/charts.svg" alt="" /></button
+          ><button><img src="./icons/setting.svg" alt="" /></button
+          ><button><img src="./icons/dots.svg" alt="" /></button>
+        </nav>
+      </header>
+      <div id="progressBar"> </div>
+      <main id="render">
+      
+    </main>
+    <template id="pomodoro">
+        <section class="timer">
+            <div class="options">
+              <button onclick="render('pomodoro')">
+                <span class="active">Pomodoro</span></button
+              ><button onclick="render('short')"><span>Short Break</span></button
+              ><button onclick="render('long')"><span>Long Break</span></button>
+            </div>
+            <div id="timer">
+              <span id="minute"></span>:<span id="second"></span>
+            </div>
+            <div id="startBtn"><button onclick="startTimer()">START</button></div>
+          </section>
+    </template>
+    
+  </body>
+</html>

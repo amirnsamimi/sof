@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+    font-family: 'roboto';
+}
+
+body{
+    background-color: rgb(186, 73, 73);
+
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    color: white;
+    font-weight: 900;
+    letter-spacing: 4px;
+
+
+}
+
+#progressBar{
+
+   transition: 500ms background;
+
+   display: block; 
+   height: 2px;
+   
+}
+
+nav{
+    display: flex;
+    gap: 0.5rem
+}
+
+nav > button{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.options{
+    display: flex;
+    font-size: 0.8rem;
+    gap: 12px;
+    align-items: center;
+ 
+}
+
+.active{
+    background-color: rgba(0,0,0,0.5);
+    padding: 4px 10px;
+    border-radius: 2px;
+}
+
+.timer{
+    margin-top: 20px;
+    background-color: rgba(255,255,255,0.3);
+    height:250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 1rem;
+    border-radius: 0.5rem
+}
+
+.timer button {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+#timer{
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+}
+
+
+#startBtn > *{
+    font-size: 1rem;
+    display: flex;
+    font-weight: 700;
+    color: rgb(186, 73, 73);
+    min-width: 150px;
+    padding: 8px 16px;
+    justify-content: center;
+    background-color: white;
+    border: none;
+    border-bottom: 4px solid lightgray;
+    border-radius: 4px;
+}
