@@ -150,3 +150,13 @@ const MinuteInitializer = () => {
     inspector();
   }, 60000);
 };
+
+
+
+// setting
+
+const dropDown = (el) => {
+    const dropDown = document.getElementById("dropdown")
+    dropDown.style.top = "6rem"
+       dropDown.style.opacity = "1"
+}

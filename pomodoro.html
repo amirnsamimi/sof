@@ -19,9 +19,18 @@
         <span>Pomodoro</span>
         <nav>
           <button><img src="./icons/charts.svg" alt="" /></button
-          ><button><img src="./icons/setting.svg" alt="" /></button
+          ><button onclick="dropDown('setting')"><img src="./icons/setting.svg" alt="" /></button
           ><button><img src="./icons/dots.svg" alt="" /></button>
         </nav>
+        <div id="dropdown"><div class="settingParent"> <div>
+            Pomodoro
+        </div> <div class="wrapper"><label>minute <input type="text"></label> <label>second<input type="text"></label></div></div>
+        <div class="settingParent"> <div>
+            Short
+        </div> <div class="wrapper"><label>minute <input type="text"></label> <label>second <input type="text"></label></div></div>
+        <div class="settingParent"> <div>
+            Long
+        </div> <div class="wrapper"><label>minute <input type="text"></label> <label>second <input type="text"></label></div></div></div>
       </header>
       <div id="progressBar"> </div>
       <main id="render">
